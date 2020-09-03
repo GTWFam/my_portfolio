@@ -23,7 +23,8 @@
   }
 
   ul.menu-nav,
-  div.menu-branding {
+  div.menu-branding,
+  div.menu-left {
     float: none;
     width: 100%;
     min-height: 0;
@@ -41,10 +42,15 @@
   .menu-branding {
     height: 25vh;
     transform: translate3d(100%, 0, 0);
+  }
+
+  .menu-picture {
+    height: 25vh;
+    width: 100%;
+    transform: translate3d(100%, 0, 0);
 
     .portrait {
       background: url("../img/portrait_small.jpg");
-      background-position: top center;
       width: 150px;
       height: 150px;
     }
