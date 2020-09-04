@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -72,18 +74,18 @@
 // Menu Overlay
 .menu {
   z-index: 0;
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   opacity: 0.9;
   visibility: hidden;
+  font-family: 'Poppins', sans-serif;
 
   &.show {
     visibility: visible;
   }
 
-  &-branding,
-  &-nav {
+  &-branding{
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -99,7 +101,6 @@
     padding: 0;
     background: darken($primary-color, 10);
     list-style: none;
-    position: relative;
 
     transform: translate3d(0, -100%, 0);
     @include easeOut;
@@ -130,28 +131,90 @@
       // Slide
       transform: translate3d(0, 0, 0);
     }
-
-    &.current > a {
-      color: $secondary-color;
-    }
-  }
-
-  .nav-link {
-    display: inline-block;
-    position: relative;
-    font-size: 30px;
-    text-transform: uppercase;
-    padding: 1rem 0;
-    font-weight: 300;
-    color: set-text-color($primary-color);
-    text-decoration: none;
-    @include easeOut;
-
-    &:hover {
-      color: lighten($secondary-color, 0.5);
-    }
   }
 }
+
+.menu-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+} 
+
+ul li:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: set-text-color($primary-color);
+  font-size: 6.5em;
+  font-weight: 700;
+  pointer-events: none;
+  opacity: 0;
+  letter-spacing: 20px;
+  transition: 0.5s;
+  white-space: nowrap;
+}
+
+ul li:hover:before {
+
+  top: -450%;
+  opacity: 0.05;
+  letter-spacing: 2px;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 17px;
+  font-size: 20px;
+  text-decoration: none;
+  background: #2196f3;
+  color: set-text-color($primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: 0.3s;
+  z-index: 1;
+
+  &.current {
+    background: lighten($color: #2196f3, $amount: 15)
+  }
+
+  &:hover {
+    transform: scale(1.4);
+    z-index: 1000;
+    background: #ff3f81;
+    opacity: 1;
+  }
+}
+
+ul li a:before {
+  content: '';
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(90deg,transparent, rgba(
+    255,255,255,0.8), transparent);
+  transform: skewX(35deg);
+  transition: 0s;
+}
+
+ul li a:hover:before {
+  left: calc(100% + 100px);
+  transition: 0.5s;
+  transition-delay: 0.2s;
+}
+
+
 
 // Delay each nav item slide by 0.1s
 @for $x from 1 through 4 {

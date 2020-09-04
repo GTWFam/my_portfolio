@@ -9,9 +9,18 @@
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
+  ul li:before {
+    font-size: 4.5rem;
+  }
 }
 // Tablets & small laptops
 @include mediaMd {
+  ul li:before {
+    opacity: 0;
+  }
+  ul li:hover:before{
+    opacity: 0;
+  }
   main {
     align-items: center;
     text-align: center;
