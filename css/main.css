@@ -47,8 +47,8 @@
       opacity: 1; }
 
 .menu {
-  z-index: -100;
-  position: relative;
+  z-index: 0;
+  position: fixed;
   top: 0;
   width: 100%;
   opacity: 0.9;
