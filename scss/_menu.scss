@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
 
 .menu-btn {
   position: absolute;
@@ -79,13 +79,13 @@
   width: 100%;
   opacity: 0.9;
   visibility: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 
   &.show {
     visibility: visible;
   }
 
-  &-branding{
+  &-branding {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -142,8 +142,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-
-} 
+}
 
 ul li:before {
   content: attr(data-text);
@@ -162,7 +161,6 @@ ul li:before {
 }
 
 ul li:hover:before {
-
   top: -450%;
   opacity: 0.05;
   letter-spacing: 2px;
@@ -183,7 +181,7 @@ ul li:hover:before {
   z-index: 1;
 
   &.current {
-    background: lighten($color: #2196f3, $amount: 15)
+    background: lighten($color: #2196f3, $amount: 15);
   }
 
   &:hover {
@@ -195,15 +193,19 @@ ul li:hover:before {
 }
 
 ul li a:before {
-  content: '';
+  content: "";
   z-index: 100;
   position: absolute;
   top: 0;
   left: -100px;
   width: 80px;
   height: 100%;
-  background: linear-gradient(90deg,transparent, rgba(
-    255,255,255,0.8), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
   transform: skewX(35deg);
   transition: 0s;
 }
@@ -213,8 +215,6 @@ ul li a:hover:before {
   transition: 0.5s;
   transition-delay: 0.2s;
 }
-
-
 
 // Delay each nav item slide by 0.1s
 @for $x from 1 through 4 {
