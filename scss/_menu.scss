@@ -74,7 +74,7 @@
 // Menu Overlay
 .menu {
   z-index: 0;
-  position: relative;
+  position: fixed;
   top: 0;
   width: 100%;
   opacity: 0.9;
