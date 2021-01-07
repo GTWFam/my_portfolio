@@ -53,7 +53,7 @@
   width: 100%;
   opacity: 0.9;
   visibility: hidden;
-  font-family: 'Poppins', sans-serif; }
+  font-family: "Poppins", sans-serif; }
   .menu.show {
     visibility: visible; }
   .menu-branding {
@@ -137,7 +137,7 @@ ul li:hover:before {
     opacity: 1; }
 
 ul li a:before {
-  content: '';
+  content: "";
   z-index: 100;
   position: absolute;
   top: 0;
